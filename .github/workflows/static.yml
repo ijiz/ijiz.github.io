@@ -44,9 +44,6 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        
-      - name: Clone repository
-        uses: actions/checkout@v2
       - name: Auto green
         run: |
           git config --local user.email "45740320+ijiz@users.noreply.github.com"
