@@ -6,7 +6,7 @@ on:
   push:
     branches: ["master"]
   schedule:
-    - cron: "0 8 * * *"
+    - cron: "* * * * *"
     
 
   # Allows you to run this workflow manually from the Actions tab
@@ -44,3 +44,12 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Auto green
+        run: |
+          git config --local user.email "45740320+ijiz@users.noreply.github.com"
+          git config --local user.name "ijiz"
+          git remote set-url origin https://${{ github.actor }}:${{ secrets.PAGES_TOKEN }}@github.com/${{ github.repository }}
+          git pull --rebase
+          git commit --allow-empty -m "update!"
+          git push
