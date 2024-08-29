@@ -52,4 +52,4 @@ jobs:
           git commit --allow-empty -m "update!"
           git push
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PAGES_TOKEN: ${{ secrets.PAGES_TOKEN }}
