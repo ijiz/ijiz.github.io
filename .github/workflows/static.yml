@@ -51,5 +51,5 @@ jobs:
           git pull --rebase
           git commit --allow-empty -m "update!"
           git push
-          env:
+        env:
           GITHUB_TOKEN: ${{ secrets.PAGES_TOKEN }}
