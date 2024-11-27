@@ -41,6 +41,7 @@ jobs:
         with:
           # Upload entire repository
           path: '.'
+          name: github-pages-${{ github.run_id }}  # use the only name of artifact
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
