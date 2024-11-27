@@ -45,6 +45,9 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          artifact_name: github-pages-${{ github.run_id }}  # be sure the id with common to artifact
+          
       - name: Auto green
         run: |
           git config --local user.email "45740320+ijiz@users.noreply.github.com"
